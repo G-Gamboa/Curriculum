@@ -1,95 +1,313 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guillermo Gamboa - CV Online</title>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --bg: #f8f9fa;
-        }
-        body { font-family: 'Arial', sans-serif; margin: 0; background: var(--bg); color: #333; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        header { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-radius: 8px; }
-        h1 { margin: 0; font-size: 2.5em; text-transform: uppercase; }
-        .subtitle { font-size: 1.2em; color: #bdc3c7; margin-top: 10px; }
-        
-        .main-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; margin-top: 30px; }
-        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
-        
-        section { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h2 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; color: var(--primary); }
-        
-        .skill-list { list-style: none; padding: 0; }
-        .skill-list li { background: #eef2f3; margin: 5px 0; padding: 8px 15px; border-radius: 4px; font-size: 0.9em; }
-        
-        .job { margin-bottom: 20px; }
-        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--accent); }
-        .job-date { font-size: 0.85em; color: #7f8c8d; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillermo Gamboa — Ingeniería en Sistemas y TIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Guillermo Gamboa</h1>
-            <div class="subtitle">Ingeniería en Sistemas y TIC (10° Semestre)</div>
-            <p>📧 gamboaguillermo12@gmail.com | 📞 3951-7765</p>
-        </header>
 
-        <div class="main-grid">
-            <aside>
-                <section>
-                    <h2>Habilidades</h2>
-                    <h3>Técnicas</h3>
-                    <ul class="skill-list">
-                        <li>C#, Python, PHP, JavaScript</li>
-                        <li>HTML, CSS, SQL (MySQL)</li>
-                        <li>React, Git, GitHub</li>
-                        <li>Power BI, Office Suite</li>
-                    </ul>
-                    <h3>Blandas</h3>
-                    <ul class="skill-list">
-                        <li>Adaptabilidad & Aprendizaje Rápido</li>
-                        <li>Análisis y resolución de problemas</li>
-                        <li>Asertividad y Puntualidad</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h2>Idiomas</h2>
-                    <p>Inglés: Básico (Oral/Escrito)</p>
-                </section>
-            </aside>
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-inner">
 
-            <main>
-                <section>
-                    <h2>Perfil Profesional</h2>
-                    <p>Estudiante de último año enfocado en el desarrollo web (C#, Python, PHP). Experiencia en mantenimiento de sitios y soporte técnico profesional.</p>
-                </section>
-
-                <section>
-                    <h2>Experiencia Laboral</h2>
-                    <div class="job">
-                        <div class="job-header">
-                            <span>Soporte TI - América Latina Online School</span>
-                            <span class="job-date">2023 - 2025</span>
-                        </div>
-                        <ul>
-                            <li>Mantenimiento del sitio web institucional y base de datos.</li>
-                            <li>Gestión de accesos y soporte técnico a usuarios.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Educación</h2>
-                    <p><strong>Ingeniería en Sistemas y TICS</strong><br>
-                    Universidad Panamericana (UPANA) - 10° Semestre</p>
-                </section>
-            </main>
-        </div>
+    <!-- Texto + contacto -->
+    <div class="hero-text">
+      <p class="subtitle">Portafolio Profesional</p>
+      <h1>Guillermo<br>Gamboa</h1>
+      <p class="profile-text">
+        Estudiante de Ingeniería en Sistemas de último año, especializado en el
+        desarrollo de aplicaciones web utilizando C#, Python y PHP. Experiencia en
+        mantenimiento de sitios web y soporte técnico de nivel profesional. Enfocado
+        en la resolución de problemas mediante SQL y frameworks modernos como React.
+      </p>
+      <div class="hero-contacts">
+        <a href="mailto:gamboaguillermo12@gmail.com" class="contact-chip">
+          <span class="icon">✉</span> gamboaguillermo12@gmail.com
+        </a>
+        <button onclick="openWhatsApp()" class="contact-chip" style="border:none;cursor:pointer;">
+          <span class="icon">💬</span> 3951-7765 (WhatsApp)
+        </button>
+      </div>
     </div>
+
+    <!-- Foto — sin marco, anclada al borde inferior del hero -->
+    <div class="photo-wrap">
+      <div class="photo-frame">
+        <img src="perfil.png" alt="Foto de Guillermo Gamboa">
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     CONTENIDO PRINCIPAL
+══════════════════════════════════════ -->
+<div class="layout">
+
+  <!-- ── COLUMNA PRINCIPAL ── -->
+  <main>
+
+    <!-- EXPERIENCIA -->
+    <section>
+      <p class="section-label">Trayectoria</p>
+      <h2 class="section-title">Experiencia</h2>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-role">Soporte TI</span>
+          <span class="exp-period">Ene 2023 — Oct 2025</span>
+        </div>
+        <p class="exp-company">América Latina Online School</p>
+        <ul class="exp-list">
+          <li>Brindé soporte técnico a usuarios administrativos y docentes.</li>
+          <li>Administré cuentas, accesos y perfiles de usuario.</li>
+          <li>Mantenimiento preventivo y correctivo del sitio web institucional, aplicando actualizaciones en el frontend y gestionando la base de datos de usuarios.</li>
+          <li>Resolví incidencias de software y configuraciones digitales.</li>
+          <li>Acompañé a usuarios en uso de plataformas tecnológicas.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-role">Docente y Apoyo Tecnológico</span>
+          <span class="exp-period">Ene 2020 — Oct 2022</span>
+        </div>
+        <p class="exp-company">Instituto Evangélico América Latina</p>
+        <ul class="exp-list">
+          <li>Impartí clases de educación cristiana a nivel básico.</li>
+          <li>Apoyé en actividades académicas y uso de herramientas digitales.</li>
+          <li>Desarrollé habilidades de comunicación, organización y trabajo en equipo.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section>
+      <p class="section-label">Trabajo</p>
+      <h2 class="section-title">Portafolio de Proyectos</h2>
+
+      <div class="portfolio-grid">
+
+        <a class="portfolio-card" href="https://github.com/G-Gamboa/BotFinanzasAPI" target="_blank" rel="noopener">
+          <div class="port-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+          </div>
+          <h4>Bot de Finanzas — API</h4>
+          <p>Backend del bot de gestión financiera personal. Expone endpoints REST para registrar ingresos, gastos y consultar reportes.</p>
+          <div class="port-footer">
+            <div class="port-tags">
+              <span class="port-tag">Python</span>
+              <span class="port-tag">REST API</span>
+              <span class="port-tag">SQL</span>
+            </div>
+            <span class="port-gh-link">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Ver repo
+            </span>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://github.com/G-Gamboa/BotFinanzasFront" target="_blank" rel="noopener">
+          <div class="port-icon">
+            <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+          </div>
+          <h4>Bot de Finanzas — Frontend</h4>
+          <p>Interfaz web del bot financiero. Consumo de la API propia para visualizar y registrar movimientos de forma interactiva.</p>
+          <div class="port-footer">
+            <div class="port-tags">
+              <span class="port-tag">React</span>
+              <span class="port-tag">JavaScript</span>
+              <span class="port-tag">Consumo API</span>
+            </div>
+            <span class="port-gh-link">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Ver repo
+            </span>
+          </div>
+        </a>
+
+        <a class="portfolio-card" href="https://github.com/G-Gamboa/SistemaDicri" target="_blank" rel="noopener">
+          <div class="port-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <h4>Sistema Dicri</h4>
+          <p>Sistema web desarrollado como prueba técnica. Demuestra capacidad para trabajar bajo requerimientos reales y entregar en tiempo.</p>
+          <div class="port-footer">
+            <div class="port-tags">
+              <span class="port-tag">PHP</span>
+              <span class="port-tag">MySQL</span>
+              <span class="port-tag special">Prueba técnica</span>
+            </div>
+            <span class="port-gh-link">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Ver repo
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <!-- FORMACIÓN -->
+    <section>
+      <h2 class="section-title">Formación</h2>
+      <div class="edu-item">
+        <p class="edu-degree">Ingeniería en Sistemas y TICs</p>
+        <p class="edu-school">Universidad Panamericana (UPANA)</p>
+        <span class="edu-badge">10° Semestre</span>
+      </div>
+      <div class="edu-item">
+        <p class="edu-degree">Bachiller en Computación</p>
+        <p class="edu-school">Instituto Evangélico América Latina</p>
+      </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS -->
+    <section>
+      <h2 class="section-title">Habilidades Técnicas</h2>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Lenguajes</p>
+        <div class="skill-tags">
+          <span class="skill-tag highlight">C#</span>
+          <span class="skill-tag highlight">Python</span>
+          <span class="skill-tag highlight">PHP</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Frameworks y Herramientas</p>
+        <div class="skill-tags">
+          <span class="skill-tag">React (básico)</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Bases de Datos</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Diseño BD</span>
+          <span class="skill-tag">Consultas SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Ofimática</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Word</span>
+          <span class="skill-tag">Excel</span>
+          <span class="skill-tag">PowerPoint</span>
+          <span class="skill-tag">Access</span>
+          <span class="skill-tag">Power BI</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Otros</p>
+        <div class="skill-tags">
+          <span class="skill-tag">POO</span>
+          <span class="skill-tag">Consumo de APIs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES BLANDAS -->
+    <section>
+      <h2 class="section-title">Habilidades</h2>
+      <ul class="soft-list">
+        <li>Responsabilidad</li>
+        <li>Puntualidad</li>
+        <li>Asertividad</li>
+        <li>Adaptabilidad</li>
+        <li>Rápido aprendizaje</li>
+        <li>Buena retentiva</li>
+        <li>Análisis y resolución de problemas</li>
+      </ul>
+    </section>
+
+    <!-- IDIOMAS -->
+    <section>
+      <h2 class="section-title">Idiomas</h2>
+      <div class="lang-row">
+        <span class="lang-name">Español</span>
+        <span class="lang-level">Nativo</span>
+      </div>
+      <div class="lang-bar">
+        <div class="lang-fill" style="width:100%;"></div>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Inglés</span>
+        <span class="lang-level">Básico</span>
+      </div>
+      <div class="lang-bar">
+        <div class="lang-fill" style="width:28%;"></div>
+      </div>
+    </section>
+
+    <!-- REDES -->
+    <section>
+      <h2 class="section-title">Redes Sociales</h2>
+      <div class="social-links">
+        <a href="https://github.com/G-Gamboa" target="_blank" rel="noopener" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="http://www.linkedin.com/in/guillermo-gamboa-a97b86225" target="_blank" rel="noopener" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+  </aside>
+</div>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Guillermo Gamboa</span>
+    <div class="footer-links">
+      <a href="mailto:gamboaguillermo12@gmail.com" class="footer-link">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        gamboaguillermo12@gmail.com
+      </a>
+      <button onclick="openWhatsApp()" class="footer-link" style="background:none;border:1px solid rgba(200,169,110,0.22);cursor:pointer;font-family:inherit;">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        3951-7765
+      </button>
+      <a href="https://github.com/G-Gamboa" target="_blank" rel="noopener" class="footer-link">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="http://www.linkedin.com/in/guillermo-gamboa-a97b86225" target="_blank" rel="noopener" class="footer-link">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <p class="footer-copy">© 2025 Guillermo Gamboa · Ingeniería en Sistemas y TIC</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
