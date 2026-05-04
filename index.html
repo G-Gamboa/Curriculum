@@ -1,0 +1,95 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guillermo Gamboa - CV Online</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+        }
+        body { font-family: 'Arial', sans-serif; margin: 0; background: var(--bg); color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-radius: 8px; }
+        h1 { margin: 0; font-size: 2.5em; text-transform: uppercase; }
+        .subtitle { font-size: 1.2em; color: #bdc3c7; margin-top: 10px; }
+        
+        .main-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; margin-top: 30px; }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
+        
+        section { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h2 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; color: var(--primary); }
+        
+        .skill-list { list-style: none; padding: 0; }
+        .skill-list li { background: #eef2f3; margin: 5px 0; padding: 8px 15px; border-radius: 4px; font-size: 0.9em; }
+        
+        .job { margin-bottom: 20px; }
+        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--accent); }
+        .job-date { font-size: 0.85em; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Guillermo Gamboa</h1>
+            <div class="subtitle">Ingeniería en Sistemas y TIC (10° Semestre)</div>
+            <p>📧 gamboaguillermo12@gmail.com | 📞 3951-7765</p>
+        </header>
+
+        <div class="main-grid">
+            <aside>
+                <section>
+                    <h2>Habilidades</h2>
+                    <h3>Técnicas</h3>
+                    <ul class="skill-list">
+                        <li>C#, Python, PHP, JavaScript</li>
+                        <li>HTML, CSS, SQL (MySQL)</li>
+                        <li>React, Git, GitHub</li>
+                        <li>Power BI, Office Suite</li>
+                    </ul>
+                    <h3>Blandas</h3>
+                    <ul class="skill-list">
+                        <li>Adaptabilidad & Aprendizaje Rápido</li>
+                        <li>Análisis y resolución de problemas</li>
+                        <li>Asertividad y Puntualidad</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Idiomas</h2>
+                    <p>Inglés: Básico (Oral/Escrito)</p>
+                </section>
+            </aside>
+
+            <main>
+                <section>
+                    <h2>Perfil Profesional</h2>
+                    <p>Estudiante de último año enfocado en el desarrollo web (C#, Python, PHP). Experiencia en mantenimiento de sitios y soporte técnico profesional.</p>
+                </section>
+
+                <section>
+                    <h2>Experiencia Laboral</h2>
+                    <div class="job">
+                        <div class="job-header">
+                            <span>Soporte TI - América Latina Online School</span>
+                            <span class="job-date">2023 - 2025</span>
+                        </div>
+                        <ul>
+                            <li>Mantenimiento del sitio web institucional y base de datos.</li>
+                            <li>Gestión de accesos y soporte técnico a usuarios.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Educación</h2>
+                    <p><strong>Ingeniería en Sistemas y TICS</strong><br>
+                    Universidad Panamericana (UPANA) - 10° Semestre</p>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
