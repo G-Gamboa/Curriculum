@@ -64,7 +64,7 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 48px;
-  align-items: flex-end;
+  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
@@ -545,6 +545,23 @@ footer {
   letter-spacing: 0.06em;
 }
 
+/* ─── HERO TOP ROW (nombre + foto inline móvil) ─── */
+.hero-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.hero-name-block { flex: 1; }
+
+/* La foto inline (dentro del texto) se oculta en desktop */
+.photo-inline { display: none; }
+
+/* La foto desktop (columna separada) se muestra normalmente */
+.photo-desktop { display: block; }
+
 /* ─── RESPONSIVE ─── */
 
 /* Tablet: mantiene texto + foto lado a lado, foto más pequeña */
@@ -553,9 +570,10 @@ footer {
     grid-template-columns: 1fr 160px;
     padding: 40px 28px 0;
     gap: 24px;
-    align-items: flex-end;
+    align-items: flex-start;
   }
-  .photo-wrap { justify-self: flex-start; }
+  .photo-desktop { display: block; }
+  .photo-inline  { display: none; }
   .photo-frame { width: 160px; }
   .hero-text { padding-bottom: 32px; }
   .hero-text h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
@@ -569,20 +587,27 @@ footer {
   footer { padding: 24px 24px; }
 }
 
-/* Móvil pequeño: una columna, foto a la izquierda */
+/* Móvil: una sola columna, foto al lado del nombre */
 @media (max-width: 480px) {
+  /* hero-inner pasa a una sola columna, ocultamos la foto desktop */
   .hero-inner {
     grid-template-columns: 1fr;
-    padding: 32px 20px 0;
+    padding: 28px 20px 0;
     gap: 0;
   }
-  .photo-wrap {
-    justify-self: flex-start;
-    margin-top: 16px;
+  .photo-desktop { display: none; }
+  .photo-inline  { display: block; flex-shrink: 0; }
+
+  /* La foto inline se ancla al fondo de la fila del nombre */
+  .photo-inline .photo-frame {
+    width: 110px;
+    align-self: flex-end;
   }
-  .photo-frame { width: 140px; }
+
   .hero-text { padding-bottom: 0; }
-  .hero-text h1 { font-size: 2rem; }
+  .hero-text h1 { font-size: 1.9rem; }
+
+  .profile-text { margin-top: 12px; }
 
   .exp-header { flex-direction: column; gap: 3px; }
   .portfolio-grid { grid-template-columns: 1fr; }
