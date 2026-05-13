@@ -2,10 +2,6 @@
 
 CV/portafolio web personal. Diseño estático con HTML, CSS y JavaScript vanilla — sin dependencias ni frameworks.
 
-## Vista previa
-
-![Hero del CV](Perfil.png)
-
 ## Tecnologías
 
 | Capa | Detalle |
