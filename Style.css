@@ -310,11 +310,43 @@ section:last-child { margin-bottom: 0; }
 
 .port-footer {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   margin-top: 14px;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.port-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.port-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 3px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  background: rgba(200,169,110,0.06);
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.port-live-link:hover {
+  background: var(--accent);
+  color: var(--navy);
+}
+.port-live-link svg {
+  width: 12px; height: 12px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .port-tags {
