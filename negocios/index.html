@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitios Web para Negocios en Guatemala — Guillermo Gamboa</title>
+<meta name="description" content="Sitios web y menús digitales para restaurantes, talleres, salones y negocios locales en Guatemala. Listos en menos de una semana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:        #0f1e35;
+    --navy-mid:    #1a2f4a;
+    --accent:      #c8a96e;
+    --accent-light:#e8d5a8;
+    --off-white:   #f2ede4;
+    --text-dark:   #1a1a1a;
+    --text-mid:    #4a4a4a;
+    --text-muted:  #7a7a7a;
+    --divider:     #d8d0c4;
+    --section-alt: #f5f0e8;
+  }
+
+  body {
+    background: var(--off-white);
+    color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .nav-brand span { color: var(--accent); }
+
+  .nav-back {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--accent); }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 2rem 5rem;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.12);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -110px; left: -110px;
+    width: 460px; height: 460px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.07);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.9rem);
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.72;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: #25d366;
+    color: #000;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 0.97rem;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 8px 32px rgba(37,211,102,0.22);
+  }
+
+  .btn-wa:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  .hero-note {
+    margin-top: 1rem;
+    font-size: 0.77rem;
+    color: rgba(255,255,255,0.28);
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 5rem 2rem;
+  }
+
+  section.alt {
+    background: var(--section-alt);
+  }
+
+  .section-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    color: var(--navy);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.65rem;
+  }
+
+  .section-sub {
+    font-size: 0.96rem;
+    color: var(--text-muted);
+    line-height: 1.72;
+    max-width: 520px;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── PACKAGES ─── */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .pkg {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--divider);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .pkg:hover {
+    box-shadow: 0 16px 48px rgba(15,30,53,0.1);
+    transform: translateY(-3px);
+  }
+
+  .pkg.featured {
+    border-color: var(--accent);
+    background: var(--navy);
+  }
+
+  .pkg-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--navy);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.85rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .pkg-tier {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .pkg.featured .pkg-tier { color: var(--accent-light); }
+
+  .pkg-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    color: var(--navy);
+    margin-bottom: 0.45rem;
+  }
+
+  .pkg.featured .pkg-name { color: #fff; }
+
+  .pkg-price {
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.15rem;
+  }
+
+  .pkg-price strong { font-weight: 700; }
+
+  .pkg.featured .pkg-price { color: #fff; }
+
+  .pkg-note {
+    font-size: 0.77rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .pkg.featured .pkg-note { color: rgba(255,255,255,0.45); }
+
+  .pkg-divider {
+    height: 1px;
+    background: var(--divider);
+    margin-bottom: 1.4rem;
+  }
+
+  .pkg.featured .pkg-divider { background: rgba(255,255,255,0.1); }
+
+  .pkg-features {
+    list-style: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.87rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .pkg.featured .pkg-features li { color: rgba(255,255,255,0.75); }
+
+  .pkg-features li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .pkg-cta {
+    display: block;
+    text-align: center;
+    padding: 0.72rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: 500;
+    transition: opacity 0.2s, background 0.2s;
+  }
+
+  .cta-outline {
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+  }
+
+  .cta-outline:hover { opacity: 0.65; }
+
+  .cta-solid {
+    background: var(--accent);
+    color: var(--navy);
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(200,169,110,0.28);
+  }
+
+  .cta-solid:hover { opacity: 0.88; }
+
+  /* ─── CLIENTS ─── */
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .client-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--divider);
+  }
+
+  .client-tag {
+    display: inline-block;
+    background: var(--section-alt);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.65rem;
+    border-radius: 100px;
+    margin-bottom: 0.9rem;
+  }
+
+  .client-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 0.55rem;
+  }
+
+  .client-result {
+    font-size: 0.91rem;
+    color: var(--text-mid);
+    line-height: 1.72;
+    margin-bottom: 1.25rem;
+  }
+
+  .client-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.2s;
+  }
+
+  .client-link:hover { color: var(--navy); }
+
+  /* ─── STEPS ─── */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--accent);
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .step-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.45rem;
+  }
+
+  .step-desc {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.68;
+  }
+
+  /* ─── FINAL CTA ─── */
+  .cta-final {
+    background: var(--navy);
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.1);
+    pointer-events: none;
+  }
+
+  .cta-final-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-final .section-title { color: #fff; }
+
+  .cta-final .section-sub {
+    color: rgba(255,255,255,0.5);
+    margin: 0 auto 2.5rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080f1c;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.28);
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--accent); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .hero { padding: 4rem 1.25rem 3.5rem; }
+    section { padding: 3.5rem 1.25rem; }
+    .packages-grid,
+    .clients-grid { grid-template-columns: 1fr; }
+    .steps { gap: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">G<span>.</span>Gamboa</div>
+  <a class="nav-back" href="/">← portafolio</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Desarrollo Web · Guatemala</p>
+    <h1>Si hoy no te encuentran<br>en internet, <em>ya perdiste<br>ese cliente</em></h1>
+    <p class="hero-sub">
+      Creamos el sitio web o menú digital de tu negocio en menos de una semana.
+      Sin tecnicismos, sin letras chiquitas, a precio justo.
+    </p>
+    <a class="btn-wa"
+       href="https://wa.me/50239517765?text=Hola%2C%20quiero%20un%20sitio%20web%20para%20mi%20negocio"
+       target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribime al WhatsApp
+    </a>
+    <p class="hero-note">Respondo el mismo día · Sin compromiso</p>
+  </div>
+</header>
+
+<!-- PACKAGES -->
+<section>
+  <div class="section-inner">
+    <p class="label">Precios</p>
+    <h2 class="section-title">Elige lo que necesita<br>tu negocio</h2>
+    <p class="section-sub">Sin sorpresas. El precio que acordamos es el precio final.</p>
+    <div class="packages-grid">
+
+      <div class="pkg">
+        <p class="pkg-tier">Básico</p>
+        <h3 class="pkg-name">Presencia Digital</h3>
+        <div class="pkg-price"><strong>Q 2,500</strong></div>
+        <p class="pkg-note">pago único · entrega en 3 días</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Página principal de tu negocio</li>
+          <li>Tus servicios o productos</li>
+          <li>Botón directo a WhatsApp</li>
+          <li>Ubicación en Google Maps</li>
+          <li>Funciona perfecto en celular</li>
+        </ul>
+        <a class="pkg-cta cta-outline"
+           href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico%20de%20Q2%2C500"
+           target="_blank">Me interesa este</a>
+      </div>
+
+      <div class="pkg featured">
+        <div class="pkg-badge">El más pedido</div>
+        <p class="pkg-tier">Completo</p>
+        <h3 class="pkg-name">Sitio Profesional</h3>
+        <div class="pkg-price"><strong>Q 4,500</strong></div>
+        <p class="pkg-note">pago único · entrega en 5 días</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Todo lo del paquete Básico</li>
+          <li>Menú digital o catálogo de productos</li>
+          <li>Galería de fotos</li>
+          <li>Formulario de contacto</li>
+          <li>Optimizado para aparecer en Google</li>
+          <li>Dominio .com incluido (1 año)</li>
+        </ul>
+        <a class="pkg-cta cta-solid"
+           href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20paquete%20Completo%20de%20Q4%2C500"
+           target="_blank">Me interesa este</a>
+      </div>
+
+      <div class="pkg">
+        <p class="pkg-tier">Premium</p>
+        <h3 class="pkg-name">Todo Incluido</h3>
+        <div class="pkg-price"><strong>Q 7,500</strong></div>
+        <p class="pkg-note">pago único · entrega en 7 días</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Todo lo del paquete Completo</li>
+          <li>Dominio + hosting por 1 año</li>
+          <li>Correo con tu dominio (info@tunegocio.com)</li>
+          <li>Enlazado a tus redes sociales</li>
+          <li>Soporte y ajustes por 3 meses</li>
+          <li>Capacitación para actualizarlo vos mismo</li>
+        </ul>
+        <a class="pkg-cta cta-outline"
+           href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20paquete%20Premium%20de%20Q7%2C500"
+           target="_blank">Me interesa este</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="alt">
+  <div class="section-inner">
+    <p class="label">Trabajo real</p>
+    <h2 class="section-title">Negocios que ya<br>están en línea</h2>
+    <p class="section-sub">Resultados concretos, no promesas.</p>
+    <div class="clients-grid">
+
+      <div class="client-card">
+        <span class="client-tag">Comercio · Guatemala</span>
+        <h3 class="client-name">Riper Guatemala</h3>
+        <p class="client-result">
+          Antes solo conseguían clientes por recomendación. Hoy cualquier persona
+          en Guatemala puede ver sus productos, conocer la empresa y hacer contacto
+          directo desde el celular — sin tener que preguntar a nadie.
+        </p>
+        <a class="client-link" href="https://riperguatemala.com" target="_blank">
+          Ver sitio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+
+      <div class="client-card">
+        <span class="client-tag">Energía · Sector Empresarial</span>
+        <h3 class="client-name">AgroEnergy Systems</h3>
+        <p class="client-result">
+          Sus clientes son empresas que investigan a los proveedores antes de reunirse.
+          Con su nuevo sitio web, llegan a esas reuniones con credibilidad ya ganada —
+          el sitio vende antes de que hablen.
+        </p>
+        <a class="client-link" href="https://agroenergysystems.com" target="_blank">
+          Ver sitio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner">
+    <p class="label">El proceso</p>
+    <h2 class="section-title">Así de simple</h2>
+    <p class="section-sub">Sin reuniones eternas ni formularios complicados.</p>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Me escribís</h3>
+        <p class="step-desc">
+          Me contás de tu negocio por WhatsApp. En qué trabajan, qué quieren mostrar,
+          si tienen fotos. Una plática de 10 minutos es suficiente.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3 class="step-title">Te mando la propuesta</h3>
+        <p class="step-desc">
+          En menos de 24 horas te envío el precio exacto y qué va a incluir tu sitio.
+          Sin costos escondidos ni letra chiquita.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Tu sitio queda listo</h3>
+        <p class="step-desc">
+          En menos de una semana tu negocio ya aparece en internet. Te entrego todo
+          funcionando y te explico cómo usarlo.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="cta-final">
+  <div class="cta-final-inner">
+    <p class="label">¿Listo?</p>
+    <h2 class="section-title">Tu competencia ya<br>está en internet</h2>
+    <p class="section-sub">
+      Cada día sin sitio web es un día que clientes potenciales se van a otro lado.
+      Escribime hoy y arrancamos esta semana.
+    </p>
+    <a class="btn-wa"
+       href="https://wa.me/50239517765?text=Hola%2C%20quiero%20un%20sitio%20web%20para%20mi%20negocio"
+       target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribime al WhatsApp
+    </a>
+    <p style="margin-top:1rem;font-size:0.77rem;color:rgba(255,255,255,0.28)">
+      Respondo el mismo día · Sin compromiso
+    </p>
+  </div>
+</div>
+
+<footer>
+  © 2025 Guillermo Gamboa · Guatemala ·
+  <a href="/">ggamboa.website</a>
+</footer>
+
+</body>
+</html>
