@@ -190,7 +190,7 @@
   /* ─── PACKAGES ─── */
   .packages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1.25rem;
     align-items: start;
   }
@@ -271,6 +271,30 @@
   }
 
   .pkg.featured .pkg-note { color: rgba(255,255,255,0.45); }
+
+  .pkg-usd {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.02em;
+  }
+
+  .pkg.featured .pkg-usd { color: rgba(255,255,255,0.38); }
+
+  .pkg-hosting-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    background: var(--section-alt);
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .pkg-hosting-note span { flex-shrink: 0; }
 
   .pkg-divider {
     height: 1px;
@@ -388,6 +412,15 @@
 
   .client-link:hover { color: var(--navy); }
 
+  .client-logo {
+    max-height: 36px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.85;
+  }
+
   /* ─── STEPS ─── */
   .steps {
     display: grid;
@@ -421,6 +454,39 @@
     font-size: 0.87rem;
     color: var(--text-muted);
     line-height: 1.68;
+  }
+
+  /* ─── PAYMENT ─── */
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .payment-card {
+    background: #fff;
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .payment-flag {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .payment-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.35rem;
+  }
+
+  .payment-card p {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.55;
   }
 
   /* ─── FINAL CTA ─── */
@@ -519,9 +585,32 @@
     <div class="packages-grid">
 
       <div class="pkg">
+        <p class="pkg-tier">Starter</p>
+        <h3 class="pkg-name">Landing Express</h3>
+        <div class="pkg-price"><strong>Q 1,000</strong></div>
+        <div class="pkg-usd">~$128 USD</div>
+        <p class="pkg-note">pago único · entrega en 2 días</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>4 secciones: inicio, servicios, quiénes somos y contacto</li>
+          <li>Botón de WhatsApp</li>
+          <li>Funciona en celular</li>
+          <li>Ideal para probar tu presencia en línea</li>
+        </ul>
+        <div class="pkg-hosting-note">
+          <span>ℹ️</span>
+          Dominio y hosting no incluidos. Puede subirse gratis en GitHub Pages.
+        </div>
+        <a class="pkg-cta cta-outline"
+           href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20Landing%20Express%20de%20Q1%2C000"
+           target="_blank">Me interesa este</a>
+      </div>
+
+      <div class="pkg">
         <p class="pkg-tier">Básico</p>
         <h3 class="pkg-name">Presencia Digital</h3>
         <div class="pkg-price"><strong>Q 2,500</strong></div>
+        <div class="pkg-usd">~$320 USD</div>
         <p class="pkg-note">pago único · entrega en 3 días</p>
         <div class="pkg-divider"></div>
         <ul class="pkg-features">
@@ -531,6 +620,10 @@
           <li>Ubicación en Google Maps</li>
           <li>Funciona perfecto en celular</li>
         </ul>
+        <div class="pkg-hosting-note">
+          <span>ℹ️</span>
+          Hosting (alquiler de espacio en internet) se gestiona aparte: ~Q100/mes o ~$13/mes.
+        </div>
         <a class="pkg-cta cta-outline"
            href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico%20de%20Q2%2C500"
            target="_blank">Me interesa este</a>
@@ -540,7 +633,8 @@
         <div class="pkg-badge">El más pedido</div>
         <p class="pkg-tier">Completo</p>
         <h3 class="pkg-name">Sitio Profesional</h3>
-        <div class="pkg-price"><strong>Q 4,500</strong></div>
+        <div class="pkg-price"><strong>Q 3,800</strong></div>
+        <div class="pkg-usd">~$488 USD</div>
         <p class="pkg-note">pago único · entrega en 5 días</p>
         <div class="pkg-divider"></div>
         <ul class="pkg-features">
@@ -550,9 +644,10 @@
           <li>Formulario de contacto</li>
           <li>Optimizado para aparecer en Google</li>
           <li>Dominio .com incluido (1 año)</li>
+          <li>Hosting incluido primer año</li>
         </ul>
         <a class="pkg-cta cta-solid"
-           href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20paquete%20Completo%20de%20Q4%2C500"
+           href="https://wa.me/50239517765?text=Hola%2C%20me%20interesa%20el%20paquete%20Completo%20de%20Q3%2C800"
            target="_blank">Me interesa este</a>
       </div>
 
@@ -560,6 +655,7 @@
         <p class="pkg-tier">Premium</p>
         <h3 class="pkg-name">Todo Incluido</h3>
         <div class="pkg-price"><strong>Q 7,500</strong></div>
+        <div class="pkg-usd">~$960 USD</div>
         <p class="pkg-note">pago único · entrega en 7 días</p>
         <div class="pkg-divider"></div>
         <ul class="pkg-features">
@@ -588,6 +684,7 @@
     <div class="clients-grid">
 
       <div class="client-card">
+        <img src="logo-riper.jpeg" alt="Riper Guatemala" class="client-logo">
         <span class="client-tag">Comercio · Guatemala</span>
         <h3 class="client-name">Riper Guatemala</h3>
         <p class="client-result">
@@ -602,6 +699,7 @@
       </div>
 
       <div class="client-card">
+        <img src="logo-agroenergy.webp" alt="AgroEnergy Systems" class="client-logo">
         <span class="client-tag">Energía · Sector Empresarial</span>
         <h3 class="client-name">AgroEnergy Systems</h3>
         <p class="client-result">
@@ -652,6 +750,42 @@
           En menos de una semana tu negocio ya aparece en internet. Te entrego todo
           funcionando y te explico cómo usarlo.
         </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="alt">
+  <div class="section-inner">
+    <p class="label">Formas de pago</p>
+    <h2 class="section-title">Fácil de pagar<br>desde donde estés</h2>
+    <p class="section-sub">Tengo cuentas locales en Guatemala, USA y México — pagás como si fuera una transferencia dentro de tu mismo país, sin fees internacionales.</p>
+    <div class="payment-grid">
+
+      <div class="payment-card">
+        <span class="payment-flag">🇬🇹</span>
+        <h3>Guatemala</h3>
+        <p>Transferencia a cuenta local (Banrural, BAC, G&T Continental, Industrial, etc.)</p>
+      </div>
+
+      <div class="payment-card">
+        <span class="payment-flag">🇺🇸</span>
+        <h3>Estados Unidos</h3>
+        <p>Transferencia local desde cualquier banco en USA — sin fees internacionales, como si pagaras a alguien en USA</p>
+      </div>
+
+      <div class="payment-card">
+        <span class="payment-flag">🇲🇽</span>
+        <h3>México</h3>
+        <p>Transferencia SPEI local desde cualquier banco mexicano — sin intermediarios ni costos extra</p>
+      </div>
+
+      <div class="payment-card">
+        <span class="payment-flag">💳</span>
+        <h3>PayPal</h3>
+        <p>Pago internacional con tarjeta de crédito o débito a través de PayPal</p>
       </div>
 
     </div>
